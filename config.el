@@ -52,21 +52,17 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(def-package! org-super-agenda
-  :after org-agenda
-  :init
-  (setq org-super-agenda-groups '((:name "Today"
+(setq
+ org-super-agenda-groups '((:name "Today"
                                   :time-grid t
                                   :scheduled today)
-                           (:name "Due today"
+                            (:name "Due today"
                                   :deadline today)
-                           (:name "Important"
+                            (:name "Important"
                                   :priority "A")
-                           (:name "Overdue"
+                            (:name "Overdue"
                                   :deadline past)
-                           (:name "Due soon"
+                            (:name "Due soon"
                                   :deadline future)
-                           (:name "Big Outcomes"
+                            (:name "Big Outcomes"
                                   :tag "bo")))
-        :config
-        (org-super-agenda-mode))
